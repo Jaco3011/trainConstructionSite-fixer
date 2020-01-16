@@ -37,7 +37,7 @@ for _, beltType in pairs({
 }) do
   for _, beltEntity in pairs(data.raw[beltType]) do
     beltEntity.collision_mask = util.table.deepcopy(beltEntity.collision_mask or {"item-layer", "object-layer", "water-tile"})
-    or key,value in pairs(beltEntity.collision_mask) do
+    for key,value in pairs(beltEntity.collision_mask) do
         table.remove(beltEntity.collision_mask, key)
     end
   end
